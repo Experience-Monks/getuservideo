@@ -1,7 +1,7 @@
 {
   "name": "getuservideo",
   "version": "0.0.0",
-  "description": "grabs user video",
+  "description": "gets a user video element in browser",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,12 +11,18 @@
     "url": "https://github.com/Jam3/getuservideo.git"
   },
   "author": "Matt DesLauriers <dave.des@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jam3/getuservideo/issues"
   },
   "homepage": "https://github.com/Jam3/getuservideo",
   "dependencies": {
     "getusermedia": "^0.2.2"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "getUserMedia",
+    "user", "media", "video",
+    "audio"
+  ]
 }
