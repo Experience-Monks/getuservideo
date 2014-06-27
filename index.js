@@ -22,6 +22,7 @@ function getUserVideo(options) {
 
             var width, height;
 
+            //if numbers are defined...
             if (hasWidth || hasHeight) {
                 if (useAspect) {
                     if (hasWidth) {
@@ -37,6 +38,13 @@ function getUserVideo(options) {
                 }
                 video.setAttribute("width", width);
                 video.setAttribute("height", height);
+            }
+            //if a string (percentage etc) is defined, don't try to maintain aspect
+            else {
+                if (options.width && typeof options.width !== "undefined")
+                    video.setAttribute("width", options.width)
+                if (options.height && typeof options.height !== "undefined")
+                    video.setAttribute("height", options.height);
             }
             streaming = true;
             if (typeof options.onReady === "function") {
