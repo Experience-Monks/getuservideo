@@ -52,8 +52,13 @@ function getUserVideo(options) {
             }
         }
     });
+    
+    var constraints = options.constraints;
+    if (!constraints) {
+        constraints = { audio: true, video: true };
+    }
 
-    getUserMedia(function (err, stream) {
+    getUserMedia(constraints, function (err, stream) {
         if (err) {
             if (typeof options.onError === "function")
                 options.onError(err);
