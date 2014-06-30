@@ -1,6 +1,6 @@
 {
   "name": "getuservideo",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "gets a user video element in browser",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,9 @@
   "devDependencies": {},
   "keywords": [
     "getUserMedia",
-    "user", "media", "video",
+    "user",
+    "media",
+    "video",
     "audio"
   ]
 }
