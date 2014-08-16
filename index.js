@@ -57,7 +57,6 @@ function getUserVideo(options) {
     if (!constraints) {
         constraints = { audio: true, video: true };
     }
-    console.log("constraints?",constraints);
     
     getUserMedia(constraints, function (err, stream) {
         if (err) {
