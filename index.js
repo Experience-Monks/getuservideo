@@ -13,7 +13,16 @@ function getUserVideo(options) {
         video.style.background = options.background;
 
     var streaming = false;
-    video.addEventListener("canplay", function(ev) {
+    console.log(video.readyState, video.HAVE_FUTURE_DATA)
+    if (typeof video.readyState !== 'undefined' && video.readyState >= video.HAVE_FUTURE_DATA) {
+        handleReady()   
+    } else
+        video.addEventListener("canplay", function() {
+            console.log("CANPLAY")
+            handleReady()
+        });
+
+    function handleReady(ev) {
         if (!streaming) {
             streaming = true;
             var hasWidth = typeof options.width === "number";
@@ -51,7 +60,7 @@ function getUserVideo(options) {
                 options.onReady(width, height);
             }
         }
-    });
+    }
     
     var constraints = options.constraints;
     if (!constraints) {
