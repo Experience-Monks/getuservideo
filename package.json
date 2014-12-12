@@ -1,6 +1,6 @@
 {
   "name": "getuservideo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "gets a user video element in browser",
   "main": "index.js",
   "scripts": {
