@@ -13,12 +13,10 @@ function getUserVideo(options) {
         video.style.background = options.background;
 
     var streaming = false;
-    console.log(video.readyState, video.HAVE_FUTURE_DATA)
     if (typeof video.readyState !== 'undefined' && video.readyState >= video.HAVE_FUTURE_DATA) {
         handleReady()   
     } else
         video.addEventListener("canplay", function() {
-            console.log("CANPLAY")
             handleReady()
         });
 
